@@ -1,6 +1,6 @@
 # Typer-Timer: Clock Your Keyboard Usage
 
-Typer-Timer is a GNOME extension for Linux that clocks your computer usage thoughout the day. Typing on your keyboard will keep the timer running. If there's no keyboard activity for 5 minutes, the timer resets. It also provides a "daily total" summarizing your keyboard usage.
+Typer-Timer is a GNOME extension for Linux that clocks your computer usage throughout the day. Typing on your keyboard will keep the timer running. If there's no keyboard activity for 5 minutes, the timer resets. It also provides a "daily total" summarizing your keyboard usage.
 
 ![GNOME extension demo](docs/gnome-extension-demo.png)
 
@@ -12,15 +12,15 @@ Typer-Timer is a GNOME extension for Linux that clocks your computer usage thoug
 
 Many other tools flood users with disruptive notifications, demanding you to take breaks.
 Typer-Timer, on the other hand, acts as a passive timer.
-It leaves **you** responsible for when and how frequently to take breaks.
+It leaves **you** responsible for how frequently to take breaks.
 
-# Requirements
+## Requirements
 
 * GNOME. See supported versions in [metadata.json](gnome-extension/metadata.json). Versions not listed might also work by executing `gsettings set org.gnome.shell disable-extension-version-validation true`.
 * X11 (Wayland not yet supported)
 * Docker or Podman for building, or follow the steps manually in [Dockerfile](Dockerfile) for installing Rust and X11 headers on your host
 
-# Build and Run
+## Build and Run
 
 ```bash
 cd typer-timer
@@ -33,7 +33,7 @@ docker run --volume $(pwd):/workspaces/typer-timer:rw typer-timer \
 # Install GNOME extension
 ln --symbolic \
     $(realpath ./gnome-extension) \
-    "~/.local/share/gnome-shell/extensions/typer-timer@hadar.gr"
+    ~/.local/share/gnome-shell/extensions/typer-timer@hadar.gr
 
 # Start keyboard detector
 ./target/release/typer-timer
